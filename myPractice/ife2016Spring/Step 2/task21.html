@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task21</title>
+	<script src="js/task21.js"></script>
+	<style>
+		.clearfix:after{
+			display: block;
+			content: '';
+			clear: both;
+		}
+		#output{
+			margin-top: 50px;
+		}
+		#output .change{
+			background-color: #aeaeae;
+		}
+		#output span{
+			cursor: pointer;
+			width: 100px;
+			height: 100px;
+			line-height: 100px;
+			text-align: center;
+			float: left;
+			margin-left: 10px;
+			background: #000;
+			color: #fff;
+		}
+		#tag{
+			margin: 20px 0 20px 0;
+		}
+		#tag span{
+			height: 30px;
+			background-color: #000;
+			color: #fff;
+			padding: 10px;
+			margin-left: 10px;
+			float: left;
+		}
+		#tag .over{
+			background-color: #aeaeae;
+		}
+	</style>
+</head>
+<body>
+	<div>
+	tag:
+	<input type="text" id="tagInput">
+	<div id="tag" class="clearfix">
+
+	</div>
+	</div>
+	<textarea rows="3" cols="20" id="text">Wade,James,Kobe,Paul,Antony</textarea>
+	<input type="button" value="右进" id="right-in">
+		<div id="output">
+		</div>
+</body>
+</html>

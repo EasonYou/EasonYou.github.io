@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task25</title>
+	<script src="js/task25.js"></script>
+	<style>
+	.container{
+		width: 200px;
+		display: flex;
+		flex-flow: column;
+		height: 100%;
+	}
+	.box{
+		background-color: #fff;
+		width: 80%;
+		height: 80%;
+		border:1px solid #aeaeae;
+		flex-flow: column;
+		justify-content:center;
+		margin: 5px;
+		padding: 5px;
+		display: flex;
+		line-height: 15px;
+		display: inline-block;
+	}
+	.switch{
+		width: 10px;
+		height: 10px;
+		background-color: #000;
+		float: left;
+	}
+	.none{
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	<input type="button" id="searchDPF" value="深度遍历搜索">
+	<input type="button" id="searchBFS" value="广度遍历搜索">
+	<input type="text" id="text">
+	<input type="button" id="DPF" value="深度优先遍历">
+	<input type="button" id="BFS" value="广度优先遍历">
+	速度：
+	<input type="text" id="speed" value="3">
+	选定的节点添加子节点：
+	<input type="text" id="value">
+	<input type="button" value="添加" id="create">
+	<input type="button" value="删除所选节点" id="delete">
+	<div><p>sas</p></div>
+	<div class="container" id="cont">
+		<div class="box">
+			<a href="#" class="switch"></a>
+			15
+			<div class="box">
+				<a href="#" class="switch"></a>
+				Eason
+				<div class="box">
+					<a href="#" class="switch"></a>
+					Wade
+					<div class="box">helllo</div>
+				</div>
+				<div class="box">You</div>
+				<div class="box">James</div>
+				<div class="box">8</div>
+				<div class="box">7</div>
+			</div>
+			<div class="box">
+				<a href="#" class="switch"></a>
+				13
+				<div class="box">2</div>
+				<div class="box">
+					<a href="#" class="switch"></a>
+					6
+					<div class="box">34</div>
+					<div class="box">23</div>
+					<div class="box">24</div>
+				</div>
+				<div class="box">9</div>
+			</div>
+			<div class="box">
+				<a href="#" class="switch"></a>
+				14
+				<div class="box">3</div>
+				<div class="box">10</div>
+			</div>
+			<div class="box">11</div>
+		</div>
+	</div>
+
+</body>
+</html>

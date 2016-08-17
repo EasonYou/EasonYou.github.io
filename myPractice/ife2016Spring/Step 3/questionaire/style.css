@@ -1,0 +1,53 @@
+*{padding: 0;margin: 0;}
+
+
+/*导航栏*/
+header{
+	height: 50px;
+	width: 100%;
+	background-color: #aeaeae;
+	position: relative;
+}
+li,ul{ list-style: none; }
+
+li{
+	float: left;
+	line-height: 50px;
+	color: #fff;
+}
+header a{
+	text-decoration: none;
+	color: #fff;
+	height: 100%;
+	display: block;
+}
+header ul,header ul li{
+	height: 50px;
+}
+.main-title,.home,.login,.sign{
+	position: absolute;
+}
+.main-title{
+	width: 100%;
+	text-align: center;
+}
+.home{
+	display: inline-block;
+	text-align: center;
+	left: 10px;
+	width: 120px;
+	}
+.login,.sign{
+	width: 50px;
+	text-align: center;	
+}
+.login{
+	right: 10px;
+}
+.sign{
+	right: 80px;
+}
+.sign:hover,.login:hover,.home:hover{
+	color: #aeaeae;
+	background-color: #fff;
+}

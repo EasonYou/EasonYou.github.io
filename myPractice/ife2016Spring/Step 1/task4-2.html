@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task4-1</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#box{
+		width: 400px;
+		height: 200px;
+		background-color: #000;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		position: absolute;
+	}
+	#left,
+	#right{
+		height: 100px;
+		width: 100px;
+		background-color: #fff;
+		position: relative;
+		border-radius:50px; 
+	}
+	#left{
+
+		top: -50px;
+		left: -50px;
+
+	}
+	#right{
+		left: 350px;
+		top: 50px;
+	}
+</style>
+<body>
+	<div id="main">
+		<div id="box">
+			<div id="left"></div>
+			<div id="right"></div>
+		</div>
+	</div>
+</body>
+</html>
