@@ -148,7 +148,6 @@ var Render=(function(){
 			fiexdadd.appendChild(oa);
 			var roll=sE('div',[['class','roll']]);
 			var oul=sE('ul');
-			console.log(arr);
 			for(i=0;i<arr.length-1;i++){
 				var oli=sE('li');
 				var ooa=sE('a',[['href',arr[i+1].href]]);
@@ -160,6 +159,99 @@ var Render=(function(){
 			roll.appendChild(oul);
 			target.appendChild(fiexdadd);
 			target.appendChild(roll);
+		},
+		guessleft:function(target,arr){
+			var i;
+			for(i=0;i<arr.length;i++){
+				var oli=sE('li');
+				var oa=sE('a',[['href',arr[i].href]]);
+				oa.innerHTML=arr[i].name;
+				oli.appendChild(oa);
+				target.appendChild(oli);
+			}
+		},
+		guessright:function(target,arr){
+			var i;
+			for(i=0;i<arr.length;i++){
+				var oli=sE('li');
+				var gPic=sE('div',[['class','g-pic']]);
+				var aPic=sE('a',[['href',arr[i].href]]);
+				var oimg=sE('img',[['src',arr[i].img],['alt',arr[i].alt]]);
+				aPic.appendChild(oimg);
+				gPic.appendChild(aPic);
+				var gPri=sE('div',[['class','g-pri']]);
+				var aPri=sE('a',[['href',arr[i].href]]);
+				aPri.innerHTML=arr[i].name;
+				var oh4=sE('h4');
+				oh4.innerHTML=arr[i].price;
+				gPri.appendChild(aPri);
+				gPri.appendChild(oh4);
+				oli.appendChild(gPic);
+				oli.appendChild(gPri);
+				target.appendChild(oli);
+			}
+		},
+		quamain:function(target,arr,brands,banners){
+			var i;
+			var qualeft=target.getElementsByClassName('qualeft')[0];
+			var quamid=target.getElementsByClassName('quamid')[0];
+			var quaright=target.getElementsByClassName('quaright')[0];
+			var brandCont=target.getElementsByClassName('brands')[0];
+			var banner=target.getElementsByClassName('banner')[0];
+			var brand1=sE('ul');
+			var brand2=sE('ul');
+			brandCont.appendChild(brand1);
+			brandCont.appendChild(brand2);
+			for(var i=0;i<arr.length;i++){
+					if(i===0||i===3||i===5){
+						var cont=sE('a',[['href',arr[i].href],['class','top']]);
+						var desc=sE('div',[['class','topdesc']]);
+						var oh3=sE('h3');
+						oh3.innerHTML=arr[i].title;
+						cont.appendChild(oh3);
+					}else{
+						var cont=sE('a',[['href',arr[i].href],['class','bot']]);
+						var desc=sE('div',[['class','botdesc']]);
+					}
+					var oh4=sE('h4');
+					oh4.innerHTML=arr[i].desc1;
+					var p1=sE('p');
+					p1.innerHTML=arr[i].desc2;
+					var p2=sE('p');
+					p2.innerHTML=arr[i].desc3;
+					desc.appendChild(oh4);
+					desc.appendChild(p1);
+					desc.appendChild(p2);
+					var oimg=sE('img',[['src',arr[i].img],'alt',arr[i].alt]);
+					cont.appendChild(desc);
+					cont.appendChild(oimg);
+					if(i===0||i===1||i==2){
+						qualeft.appendChild(cont);
+					}else if(i===3||i===4){
+						quamid.appendChild(cont);
+					}else{
+						quaright.appendChild(cont);
+					}
+			}
+			for(i=0;i<brands.length;i++){
+				var oli=sE('li');
+				var oa=sE('a',[['href',brands[i].href]]);
+				var oimg=sE('img',[['src',brands[i].img],['alt',brands[i].alt]]);
+				oa.appendChild(oimg);
+				oli.appendChild(oa);
+				if(i<=6){
+					brand1.appendChild(oli);
+				}
+				else{
+					brand2.appendChild(oli);
+				}
+			}
+			for(i=0;i<banners.length;i++){
+				var ban=sE('a',[['href',banners[i].href]]);
+				var oimg=sE('img',[['src',banners[i].img],'alt',banners[i].alt]);
+				ban.appendChild(oimg);
+				banner.appendChild(ban);
+			}
 		},
 		classifyBarEvent:function(){
 			var clas=$('clas');
@@ -191,7 +283,6 @@ var Render=(function(){
 			}
 			function show(i){
 					return function(){
-						console.log(i);
 						pic[i].style.display='block';
 						picbtn[i].style.backgroundColor='#C81623';
 						setTimeout(function(){
@@ -228,7 +319,6 @@ var Render=(function(){
 		rolladdEvent(){
 			var oul=$('roll')[0].getElementsByTagName('ul')[0];
 			document.getElementById('rolladd').getElementsByClassName('rolladdleft')[0].onclick=function(){
-				console.log(getStyle(oul,'left'));
 				if(getStyle(oul,'left')!=='-2009px'&&getStyle(oul,'left')!=='-3013px'&&
 					getStyle(oul,'left')!=='-1px'&&getStyle(oul,'left')!=='-1005px'){
 					return;
@@ -237,7 +327,6 @@ var Render=(function(){
 					oul.style.left=-3013+'px';
 				}else{
 					var left=parseInt(getStyle(oul,'left'));
-					console.log(left);
 					oul.style.left=(left+1004)+'px';
 				}
 			};
@@ -250,7 +339,6 @@ var Render=(function(){
 					oul.style.left=-1+'px';
 				}else{
 					var left=parseInt(getStyle(oul,'left'));
-					console.log(left);
 					oul.style.left=(left-1004)+'px';
 				}
 			};

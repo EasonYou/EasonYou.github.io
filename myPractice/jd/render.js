@@ -170,5 +170,50 @@ var rolladd=[{href:'#',img:'./img/57b17084N4eef0b27.jpg',alt:'hello'},{href:'#',
 
 render1.rolladd(document.getElementById('rolladd'),rolladd);
 
+//猜你喜欢
+var guessleft=[{name:'面部护理',href:'#'},{name:'面部护理',href:'#'},
+			   {name:'面部护理',href:'#'},{name:'面部护理',href:'#'},
+			   {name:'面部护理',href:'#'},{name:'面部护理',href:'#'},]
+
+render1.guessleft($('guessleft')[0].getElementsByTagName('ul')[0],guessleft);
+
+var guessright=[{name:'东芝(TOSHIBA) Q300系列',href:'#',img:'./img/55d6dcc9N5e641939.jpg',price:'￥449.00'},
+				{name:'东芝(TOSHIBA) Q300系列',href:'#',img:'./img/55d6dcc9N5e641939.jpg',price:'￥449.00'},
+				{name:'东芝(TOSHIBA) Q300系列',href:'#',img:'./img/55d6dcc9N5e641939.jpg',price:'￥449.00'},
+				{name:'东芝(TOSHIBA) Q300系列',href:'#',img:'./img/55d6dcc9N5e641939.jpg',price:'￥449.00'},
+				{name:'东芝(TOSHIBA) Q300系列',href:'#',img:'./img/55d6dcc9N5e641939.jpg',price:'￥449.00'},]
+
+
+render1.guessright($('guessright')[0].getElementsByTagName('ul')[0],guessright);
+
 //事件绑定
 render1.bind();
+
+
+var quamain=[{href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57b50e8bN63c3c7af.jpg',alt:'hello'},
+			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57a46ab9Nd618bcee.jpg',alt:'hello'},
+			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57a46ab9Nd618bcee.jpg',alt:'hello'},
+			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57b071f8Na42c3d99.jpg',alt:'hello'},
+			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57b316e2N89fe7867.jpg',alt:'hello'},
+			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57b50e8bN63c3c7af.jpg',alt:'hello'},
+			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57a46ab9Nd618bcee.jpg',alt:'hello'},
+			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57a46ab9Nd618bcee.jpg',alt:'hello'}];
+
+var brands=[{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'},
+			{href:'#',img:'./img/5763ad44Nd29dc824.jpg',alt:'hello'}];
+var banners=[{href:'#',img:'./img/57ad3787N2ad4fd1f.jpg',alt:'hello'},
+			 {href:'#',img:'./img/57ada59bN0fb4d8dc.jpg',alt:'hello'},
+			 {href:'#',img:'./img/57b27957N81036d7c.jpg',alt:'hello'}]
+render1.quamain(document.getElementById('qualife'),quamain,brands,banners);

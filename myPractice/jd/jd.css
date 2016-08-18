@@ -555,6 +555,7 @@ body{
 
 #rolladd{
 	height: 164px;
+	margin-bottom: 30px;
 }
 #rolladd .fixedadd{
 	float: left;
@@ -590,6 +591,239 @@ body{
 	left: 210px;
 } 
 
+/*guess like*/
+#guesslike .w{
+	height: 311px;
+}
+#guesslike .guess{
+	height: 297px;
+}
+#guesslike .guess .headtitle{
+	height: 36px;
+}
+#guesslike .guess .headtitle h3{
+	margin-top: 5px;
+	float: left;
+	font-size: #333;
+	font-weight: 400;
+}
+#guesslike .guess .headtitle a{
+	float: right;
+	font-size: 12px;
+	cursor: pointer;
+	margin-top: 10px;
+	color: #333;
+	width: 60px;
+	height: 18px;
+	background: url(./img/homebg.png) -310px -5px no-repeat;
+}
+#guesslike .guess .headtitle a:hover{
+	background: url(./img/homebg.png) -310px -29px no-repeat;
+	color: #c81623;
+}
+#guesslike .guess .guessmain{
+	height: 261px;
+	border: 1px solid #e5e5e5;
+}
+#guesslike .guess .guessmain .guessleft{
+	width: 202px;
+	height: 100%;
+	float: left;
+	border-right: 1px solid #e5e5e5;
+}
+#guesslike .guess .guessmain .guessleft .guesspic{
+	width: 166px;
+	height: 16px;
+	background: url(./img/56a5d4a6N3ee370d0.jpg) no-repeat;
+	margin: 0 auto;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+#guesslike .guess .guessmain .guessleft ul li{
+	width: 71px;
+	height: 31px;
+	border: 1px solid #e5e5e5;
+	float: left;
+	margin: 20px 0 0 20px;
+}
+#guesslike .guess .guessmain .guessleft ul li:hover{
+	border: 1px solid #fe7758;
+}
+#guesslike .guess .guessmain .guessleft ul li a:hover{
+	color: #fe7758;
+}
+#guesslike .guess .guessmain .guessleft ul li a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	color: #666;
+	font-size: 12px;
+	line-height: 31px;
+	text-align: center;
+}
+#guesslike .guess .guessmain .guessright{
+	width: 1005px;
+	height: 100%;
+	float: left;
+}
+#guesslike .guess .guessmain .guessright ul li{
+	width: 201px;
+	height: 236px;
+	float: left;
+	margin-top: 15px;
+}
+#guesslike .guess .guessmain .guessright ul li .g-pic{
+	margin-bottom: 10px;
+}
+#guesslike .guess .guessmain .guessright ul li .g-pic a{
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+#guesslike .guess .guessmain .guessright ul li .g-pri{
+	display: inline-block;
+	width: 100%;
+	
+	text-align: center;
+}
+#guesslike .guess .guessmain .guessright ul li .g-pri a{
+	color: #666;
+	font-size: 12px;
+	font-weight: 
+}
+#guesslike .guess .guessmain .guessright ul li .g-pri h4{
+	font-size: 16px;
+	color: #c81623;
+	margin-top: 15px;
+}
+
+/*quelife*/
+#qualife .w{
+	height: 600px;
+	margin: 15px auto;
+}
+#qualife .quadesc{
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 36px;
+	color: #333;
+}
+#qualife .quamain{
+	height: 407px;
+	border: 1px solid #e5e5e5;
+}
+#qualife .quamain .qualeft,
+#qualife .quamain .quamid,
+#qualife .quamain .quaright{
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+#qualife .quamain .qualeft{
+	width: 406px;
+	background-color: #f7f7f7;
+}
+
+#qualife .quamain .quamid{
+	width: 229px;
+}
+#qualife .quamain .quaright{
+	width: 406px;
+	background-color: #f7f7f7;
+}
+#qualife .quamain .brands{
+	width: 171px;
+}
+#qualife .quamain .top{
+	width: 404px;
+	display: inline-block;
+	height: 247px;
+	float: left;
+	position: relative;
+	padding-right: 1px;
+}
+#qualife .quamain .bot{
+	width: 202px;
+	height: 158px;
+	float: left;
+	border-top: 1px solid #e5e5e5;
+	display: inline-block;
+	position: relative;
+	border-right: 1px solid #e5e5e5;
+}
+#qualife .quamain .quamid .top{
+	border-left: 1px solid #e5e5e5;
+	width: 228px;
+}
+#qualife .quamain .quamid .bot{
+	width: 229px;
+
+}
+
+#qualife .quamain .quaright .top{
+	border-left: 1px solid #e5e5e5;
+	display: table-cell;
+	border-bottom: 1px solid #e5e5e5;
+}
+#qualife .quamain h3{
+	width: 90%;
+	line-height: 42px;
+	text-align: center;
+	font-size: 15px;
+	color: #333;
+	margin: 0 auto;
+	border-bottom: 1px dashed #e0e0e0;
+}
+#qualife .quamain .brands{
+	height: 100%;
+	width: 165px;
+	border-left: 1px solid #e5e5e5;
+	float: left;
+}
+#qualife .quamain .brands ul{
+	float: left;
+}
+#qualife .quamain .brands ul:first-child li{
+	border-right: 1px dashed #e0e0e0;
+}
+#qualife .quamain .brands ul li{
+	border-bottom: 1px dashed #e0e0e0;
+	margin-left: 10px;
+	width: 72px;
+	height: 57px;
+}
+#qualife .quamain .brands ul li:last-child{
+	border-bottom: 0;
+}
+
+
+#qualife .topdesc{
+	position: absolute;
+	left: 20px;
+	top: 100px;
+}
+
+
+#qualife .botdesc,
+#qualife .middesc{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 10px;
+}
+#qualife .quamain .banner{
+	float: left;
+	margin-top: 20px;
+}
+#qualife .quamain .banner a{
+	display: inline-block;
+	width: 402px;
+}
+
+
+
+
 /*footer*/
 #footer{
 	width: 100%;
@@ -601,6 +835,7 @@ body{
 	width: 100%;
 	height: 54px;
 	margin-bottom: 50px;
+	background-color: #f5f5f5;
 }
 #footer .add div{
 	width: 220px;
