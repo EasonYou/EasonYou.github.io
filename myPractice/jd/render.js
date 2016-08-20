@@ -186,9 +186,8 @@ var guessright=[{name:'东芝(TOSHIBA) Q300系列',href:'#',img:'./img/55d6dcc9N
 
 render1.guessright($('guessright')[0].getElementsByTagName('ul')[0],guessright);
 
-//事件绑定
-render1.bind();
 
+//品质生活
 
 var quamain=[{href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57b50e8bN63c3c7af.jpg',alt:'hello'},
 			 {href:'#',title:'新发现',desc1:'星空灰',desc2:'京东独家发售',desc3:'购机赢免单',img:'./img/57a46ab9Nd618bcee.jpg',alt:'hello'},
@@ -217,3 +216,151 @@ var banners=[{href:'#',img:'./img/57ad3787N2ad4fd1f.jpg',alt:'hello'},
 			 {href:'#',img:'./img/57ada59bN0fb4d8dc.jpg',alt:'hello'},
 			 {href:'#',img:'./img/57b27957N81036d7c.jpg',alt:'hello'}]
 render1.quamain(document.getElementById('qualife'),quamain,brands,banners);
+
+//主广告
+
+var mainside=[{href:'#',img:'./img/57b5cf13Nbad8e6d7.jpg',alt:'hello'},
+			  {href:'#',img:'./img/57b5d06cN0c26228c.jpg',alt:'hello'},
+			  {name:'男装',href:'#'},{name:'女装',href:'#'},{name:'内衣',href:'#'},
+			  {name:'鞋靴',href:'#'},{name:'箱包',href:'#'},{name:'奢侈',href:'#'},
+			  {name:'潮流女装',href:'#'},{name:'潮流女装',href:'#'},{name:'潮流女装',href:'#'},
+			  {name:'潮流女装',href:'#'},{name:'潮流女装',href:'#'},{name:'潮流女装',href:'#'},
+			  {name:'潮流女装',href:'#'},{name:'潮流女装',href:'#'},{name:'奢品名表',href:'#'},
+			  {name:'奢品名表',href:'#'},{name:'奢品名表',href:'#'},{name:'奢品名表',href:'#'},
+			  {name:'奢品名表',href:'#'},{name:'奢品名表',href:'#'},{name:'奢品名表',href:'#'},
+			  {name:'奢品名表',href:'#'},]
+
+
+render1.mainSide($('mainside')[0],mainside);
+
+var mainRight0=[{href:'#',img:'./img/57b5cdb8N62297e60.jpg',alt:'hello'},
+				{href:'#',img:'./img/57b5cdb8N62297e60.jpg',alt:'hello'},
+				{href:'#',img:'./img/57b5cdb8N62297e60.jpg',alt:'hello'},
+				{href:'#',img:'./img/57b5cdb8N62297e60.jpg',alt:'hello'},
+				{href:'#',img:'./img/57b5cdb8N62297e60.jpg',alt:'hello'},
+				{href:'#',img:'./img/57b5cdb8N62297e60.jpg',alt:'hello'},
+				{href:'#',img:'./img/57b5ce4cN3a9cc0c6.jpg',alt:'hello'},];
+
+render1.mainRightFirst($('addmain')[0],1,mainRight0);
+
+var mainright1T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright1B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+var mainright2T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright2B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+var mainright3T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright3B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+var mainright4T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright4B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+var mainright5T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright5B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+var mainright6T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright6B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+var mainright7T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright7B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+var mainright8T=[{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},
+				{name:'Bear surfboards 卫衣男开衫连帽冲浪印花欧美运动外套',price:'￥169.00',href:'#',img:'./img/57a96df4N8c2f606e.jpg',alt:'hello'},];
+var mainright8B=[{href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},
+				 {href:'#',img:'./img/57b5c5c6N8740e689.jpg',alt:'hello'},];
+
+render1.mainRight($('addmain')[0],mainright1T,mainright1B);
+render1.mainRight($('addmain')[0],mainright2T,mainright2B);
+render1.mainRight($('addmain')[0],mainright3T,mainright3B);
+render1.mainRight($('addmain')[0],mainright4T,mainright4B);
+render1.mainRight($('addmain')[0],mainright5T,mainright5B);
+render1.mainRight($('addmain')[0],mainright6T,mainright6B);
+render1.mainRight($('addmain')[0],mainright7T,mainright7B);
+render1.mainRight($('addmain')[0],mainright8T,mainright8B);
+
+
+var mainBanner=[{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},
+			{href:'#',img:'./img/57b16e17N7e087228.png',alt:'hello'},];
+render1.mainBanner($('botadd')[0],mainBanner);
+
+//事件绑定
+render1.bind();
