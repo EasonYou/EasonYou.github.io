@@ -1,4 +1,4 @@
-//实例化
+﻿//实例化
 var render1=Render.init();
 
 //search
@@ -364,3 +364,14 @@ render1.mainBanner($('botadd')[0],mainBanner);
 
 //事件绑定
 render1.bind();
+
+
+
+Pace.on('done',function(){
+	setTimeout(function(){
+		$('mask')[0].style.opacity=0;
+		setTimeout(function(){
+			$('mask')[0].style.display='none';
+		},2000)
+	},100);
+},['a','b'])
