@@ -224,9 +224,7 @@ $(function(){
                         me.noData(false);
                 },
                 error: function(xhr, type){
-		    console.log(xhr,type);
-                    console.log('Ajax error!');
-			
+                    alert('Ajax error!');
                     // 即使加载出错，也得重置
                   	console.log(xhr,type)
                     me.resetload();
