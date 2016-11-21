@@ -30,31 +30,31 @@
 <script>
 
 $(function(){
-    $.ajax({
-                type: 'GET',
-                url: 'json/firstLoad.json',
-                dataType: 'json',
-                success: function(data){
-                    // $('.con').remove();
-              var result='<div class="con">';
-              for(var i=0;i<data.lists.length;i++){
-                console.log(i);
-                result+='<div class="tb">'+
-                      '<span>'+i+'</span>'+
-                      '<span>'+data.lists[i].name+'</span>'+
-                      '<span>'+data.lists[i].num+'</span>'+
-                    '</div>'
-              }
-              result+='</div>';
-              console.log(result);
-              $('.table').html(result);
-                },
-                error: function(xhr, type){
-                    alert('Ajax error!');
-                    // 即使加载出错，也得重置
-                    console.log(xhr,type)
-                }
-            });
+    // $.ajax({
+    //             type: 'GET',
+    //             url: 'json/firstLoad.json',
+    //             dataType: 'json',
+    //             success: function(data){
+    //                 // $('.con').remove();
+    //           var result='<div class="con">';
+    //           for(var i=0;i<data.lists.length;i++){
+    //             console.log(i);
+    //             result+='<div class="tb">'+
+    //                   '<span>'+i+'</span>'+
+    //                   '<span>'+data.lists[i].name+'</span>'+
+    //                   '<span>'+data.lists[i].num+'</span>'+
+    //                 '</div>'
+    //           }
+    //           result+='</div>';
+    //           console.log(result);
+    //           $('.table').html(result);
+    //             },
+    //             error: function(xhr, type){
+    //                 alert('Ajax error!');
+    //                 // 即使加载出错，也得重置
+    //                 console.log(xhr,type)
+    //             }
+    //         });
     // ajaxx('firstLoad');
     // dropload
             $('.content').dropload({
