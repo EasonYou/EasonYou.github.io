@@ -1,9 +1,8 @@
 ;(function(){
-	$('.checkRanking').on('touchend',function(e){
-		$('.mask').show();
-	})
+
 	$('.close').on('touchend',function(e){
-		$('.mask').hide();
+		console.log('a');
+		history.back();
 	})
 	$('.open').on('touchend',function(e){
 		console.log('a');

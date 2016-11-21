@@ -125,6 +125,7 @@ a{
 	line-height: 4rem;
 	text-align: center;
 	color: #fff;
+	position: relative;
 }
 .table{
 	width: 100%;
@@ -159,8 +160,8 @@ a{
 	position: absolute;
 	border-radius: 50%;
 	box-shadow: 0 0 0.5rem rgba(0,0,0,0.3);
-	top: -0.5rem;
-	right: -0.5rem;
+	top: 0.8rem;
+	right: 1rem;
 }
 .close a{
 	width: 100%;

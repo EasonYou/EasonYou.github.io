@@ -14,6 +14,9 @@
 <body class="yellow">
 	<div class="header-r">
 		<h3>排行榜</h3>
+    <div class="close">
+      <a>+</a>
+    </div>
 	</div>
 	<div class="content">
 		<div class="head">
@@ -27,169 +30,84 @@
 </body>
 <script src="js/zepto.js"></script>
 <script src="js/dropload.min.js"></script>
+<script src="js/center.js"></script>
 <script>
 
-$(function(){
-    $.ajax({
-                type: 'GET',
-                url: 'json/firstLoad.json',
-                dataType: 'json',
-                success: function(data){
-                    // $('.con').remove();
-              var result='<div class="con">';
-              for(var i=0;i<data.lists.length;i++){
-                console.log(i);
-                result+='<div class="tb">'+
-                      '<span>'+i+'</span>'+
-                      '<span>'+data.lists[i].name+'</span>'+
-                      '<span>'+data.lists[i].num+'</span>'+
-                    '</div>'
-              }
-              result+='</div>';
-              console.log(result);
-              $('.table').html(result);
-                },
-                error: function(xhr, type){
-                    alert('Ajax error!');
-                    // 即使加载出错，也得重置
-                    console.log(xhr,type)
-                }
-            });
-    // ajaxx('firstLoad');
-    // dropload
-            $('.content').dropload({
-        scrollArea : window,
-        domUp : {
-            domClass   : 'dropload-up',
-            domRefresh : '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
-            domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
-            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+$(function() {
+  $.ajax({
+    type: 'GET',
+    url: 'json/firstLoad.json',
+    dataType: 'json',
+    success: function(data) {
+      // $('.con').remove();
+      var result = '<div class="con">';
+      for (var i = 0; i < data.lists.length; i++) {
+        console.log(i);
+        result += '<div class="tb">' +
+          '<span>' + i + '</span>' +
+          '<span>' + data.lists[i].name + '</span>' +
+          '<span>' + data.lists[i].num + '</span>' +
+          '</div>'
+      }
+      result += '</div>';
+      console.log(result);
+      $('.table').html(result);
+    },
+    error: function(xhr, type) {
+      alert('Ajax error!');
+      console.log(xhr, type)
+    }
+  });
+  $('.content').dropload({
+    scrollArea: window,
+    domUp: {
+      domClass: 'dropload-up',
+      domRefresh: '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
+      domUpdate: '<div class="dropload-update">↑释放更新-自定义内容</div>',
+      domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>'
+    },
+    domDown: {
+      domClass: 'dropload-down',
+      domRefresh: '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
+      domLoad: '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
+      domNoData: '<div class="dropload-noData">暂无数据-自定义内容</div>'
+    },
+    loadUpFn: function(me) {
+      $.ajax({
+        type: 'GET',
+        url: 'json/analog.json',
+        dataType: 'json',
+        success: function(data) {
+          $('.con').remove();
+          var result = '<div class="con">';
+          for (var i = 0; i < data.lists.length; i++) {
+            result += '<div class="tb">' +
+              '<span>' + i + '</span>' +
+              '<span>' + data.lists[i].name + '</span>' +
+              '<span>' + data.lists[i].num + '</span>' +
+              '</div>'
+          }
+          result += '</div>';
+          $('.table').html(result);
+          me.resetload();
+          counter = 0;
+          me.unlock();
+          me.noData(false);
         },
-        domDown : {
-            domClass   : 'dropload-down',
-            domRefresh : '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
-            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中...</div>',
-            domNoData  : '<div class="dropload-noData">暂无数据-自定义内容</div>'
-        },
-        loadUpFn : function(me){
-            // var analog={
-          //       "lists":[
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"bbb",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"ccc",
-          //               "num":"121",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //           {
-          //               "name":"aaa",
-          //               "num":"11",
-          //           },
-          //       ]
-          //   };
-            // console.log('a');
-            // $('.con').remove();
-            // var result='<div class="con">';
-            // for(var i=0;i<analog.lists.length;i++){
-            //  console.log(i);
-            //  result+='<div class="tb">'+
-            //        '<span>'+i+'</span>'+
-            //        '<span>'+analog.lists[i].name+'</span>'+
-            //        '<span>'+analog.lists[i].num+'</span>'+
-            //      '</div>'
-            // }
-            // result+='</div>';
-            // console.log(result);
-            // $('.table').html(result);
-            // me.resetload();
-
-
-            $.ajax({
-                type: 'GET',
-                url: 'json/analog.json',
-                dataType: 'json',
-                success: function(data){
-                    $('.con').remove();
-              var result='<div class="con">';
-              for(var i=0;i<data.lists.length;i++){
-                result+='<div class="tb">'+
-                      '<span>'+i+'</span>'+
-                      '<span>'+data.lists[i].name+'</span>'+
-                      '<span>'+data.lists[i].num+'</span>'+
-                    '</div>'
-              }
-              result+='</div>';
-              $('.table').html(result);
-              me.resetload();
-                        // 重置索引值，重新拼接more.json数据
-                        counter = 0;
-                        // 解锁
-                        me.unlock();
-                        me.noData(false);
-                },
-                error: function(xhr, type){
-                    alert('Ajax error!');
-                    // 即使加载出错，也得重置
-                    console.log(xhr,type)
-                    me.resetload();
-                }
-            });
-        },
-        loadDownFn : function(me){
-            me.noData();
-             me.resetload();
-        },
-        threshold : 50
-    });
+        error: function(xhr, type) {
+          alert('Ajax error!');
+          console.log(xhr, type)
+          me.resetload();
+        }
+      });
+    },
+    loadDownFn: function(me) {
+      me.noData();
+      me.resetload();
+      $('.dropload-down').css('display', 'none');
+    },
+    threshold: 50
+  });
 
 });
 </script>
