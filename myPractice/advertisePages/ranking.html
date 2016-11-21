@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>排行榜</title>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="format-detection" content="telephone=no">
+	<link rel="stylesheet" href="css/dropload.css">
+	<link rel="stylesheet" href="css/style.css">	
+</head>
+<body class="yellow">
+	<div class="header-r">
+		<h3>排行榜</h3>
+	</div>
+	<div class="content">
+		<div class="head">
+					<span>排名</span>
+					<span>用户</span>
+					<span>关联客户数</span>
+			</div>
+			<div class="table">
+			<div class="con">
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+				<div class="tb">
+					<span>1</span>
+					<span>aaa</span>
+					<span>11</span>
+				</div>
+			</div>
+			</div>
+	</div>
+</body>
+<script src="js/zepto.js"></script>
+<script src="js/dropload.min.js"></script>
+<script>
+$(function(){
+    var counter = 0;
+    // 每页展示4个
+    var num = 4;
+    var pageStart = 0,pageEnd = 0;
+
+    // dropload
+    $('.content').dropload({
+        scrollArea : window,
+        domUp : {
+            domClass   : 'dropload-up',
+            domRefresh : '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
+            domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>'
+        },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>',
+            domNoData  : '<div class="dropload-noData">暂无数据-自定义内容</div>'
+        },
+        loadUpFn : function(me){
+        		// var analog={
+          //       "lists":[
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"bbb",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"ccc",
+          //               "num":"121",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //           {
+          //               "name":"aaa",
+          //               "num":"11",
+          //           },
+          //       ]
+          //   };
+        		// console.log('a');
+        		// $('.con').remove();
+        		// var result='<div class="con">';
+        		// for(var i=0;i<analog.lists.length;i++){
+        		// 	console.log(i);
+        		// 	result+='<div class="tb">'+
+        		// 				'<span>'+i+'</span>'+
+        		// 				'<span>'+analog.lists[i].name+'</span>'+
+        		// 				'<span>'+analog.lists[i].num+'</span>'+
+        		// 			'</div>'
+        		// }
+        		// result+='</div>';
+        		// console.log(result);
+        		// $('.table').html(result);
+        		// me.resetload();
+
+
+            $.ajax({
+                type: 'GET',
+                url: 'json/analog.json',
+                dataType: 'json',
+                success: function(data){
+                    $('.con').remove();
+	        		var result='<div class="con">';
+	        		for(var i=0;i<data.lists.length;i++){
+	        			console.log(i);
+	        			result+='<div class="tb">'+
+	        						'<span>'+i+'</span>'+
+	        						'<span>'+data.lists[i].name+'</span>'+
+	        						'<span>'+data.lists[i].num+'</span>'+
+	        					'</div>'
+	        		}
+	        		result+='</div>';
+	        		console.log(result);
+	        		$('.table').html(result);
+	        		me.resetload();
+                        // 重置索引值，重新拼接more.json数据
+                        counter = 0;
+                        // 解锁
+                        me.unlock();
+                        me.noData(false);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                  	console.log(xhr,type)
+                    me.resetload();
+                }
+            });
+        },
+        threshold : 50
+    });
+});
+</script>
+</html>	
