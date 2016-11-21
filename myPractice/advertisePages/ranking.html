@@ -202,7 +202,9 @@ $(function(){
               result+='</div>';
               $('.table').html(result);
               console.log(me);
-              me.opts.loadDownFn=function(){};
+              me.opts.loadDownFn=function(){
+                me.resetload();
+              };
                 },
                 error: function(xhr, type){
                     alert('Ajax error!');
