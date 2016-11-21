@@ -65,6 +65,12 @@ $(function(){
             domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
             domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>'
         },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>',
+            domNoData  : '<div class="dropload-noData">暂无数据-自定义内容</div>'
+        },
         loadUpFn : function(me){
             // var analog={
           //       "lists":[
@@ -177,6 +183,34 @@ $(function(){
                     // 即使加载出错，也得重置
                     console.log(xhr,type)
                     me.resetload();
+                }
+            });
+        },
+        loadDownFn : function(me){
+             $.ajax({
+                type: 'GET',
+                url: 'json/firstLoad.json',
+                dataType: 'json',
+                success: function(data){
+                    // $('.con').remove();
+              var result='<div class="con">';
+              for(var i=0;i<data.lists.length;i++){
+                console.log(i);
+                result+='<div class="tb">'+
+                      '<span>'+i+'</span>'+
+                      '<span>'+data.lists[i].name+'</span>'+
+                      '<span>'+data.lists[i].num+'</span>'+
+                    '</div>'
+              }
+              result+='</div>';
+              console.log(result);
+              $('.table').html(result);
+              lock('down');
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    console.log(xhr,type)
                 }
             });
         },
