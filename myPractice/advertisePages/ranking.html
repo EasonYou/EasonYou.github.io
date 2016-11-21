@@ -48,7 +48,16 @@ $(function(){
               result+='</div>';
               console.log(result);
               $('.table').html(result);
-              $('.content').dropload({
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    console.log(xhr,type)
+                }
+            });
+    // ajaxx('firstLoad');
+    // dropload
+            $('.content').dropload({
         scrollArea : window,
         domUp : {
             domClass   : 'dropload-up',
@@ -176,20 +185,11 @@ $(function(){
             });
         },
         loadDownFn : function(me){
+            me.noData();
              me.resetload();
         },
         threshold : 50
     });
-                },
-                error: function(xhr, type){
-                    alert('Ajax error!');
-                    // 即使加载出错，也得重置
-                    console.log(xhr,type)
-                }
-            });
-    // ajaxx('firstLoad');
-    // dropload
-            
 
 });
 </script>
