@@ -28,8 +28,29 @@
 <script src="js/zepto.js"></script>
 <script src="js/dropload.min.js"></script>
 <script>
-function ajaxx(file){
-  $.ajax({
+
+$(function(){
+    
+    ajaxx('firstLoad');
+    // dropload
+    setTimeout(function(){
+            $('.content').dropload({
+        scrollArea : window,
+        domUp : {
+            domClass   : 'dropload-up',
+            domRefresh : '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
+            domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>'
+        },
+        domDown : {
+            domClass   : 'dropload-down',
+            domRefresh : '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
+            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>',
+            domNoData  : '<div class="dropload-noData">暂无数据-自定义内容</div>'
+        },
+        loadUpFn : function(me){
+          function ajaxx(file){
+          $.ajax({
                 type: 'GET',
                 url: 'json/'+file+'.json',
                 dataType: 'json',
@@ -62,26 +83,6 @@ function ajaxx(file){
                 }
             });
 }
-$(function(){
-    
-    ajaxx('firstLoad');
-    // dropload
-    setTimeout(function(){
-            $('.content').dropload({
-        scrollArea : window,
-        domUp : {
-            domClass   : 'dropload-up',
-            domRefresh : '<div class="dropload-refresh">↓下拉刷新-自定义内容</div>',
-            domUpdate  : '<div class="dropload-update">↑释放更新-自定义内容</div>',
-            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>'
-        },
-        domDown : {
-            domClass   : 'dropload-down',
-            domRefresh : '<div class="dropload-refresh">↑上拉加载更多-自定义内容</div>',
-            domLoad    : '<div class="dropload-load"><span class="loading"></span>加载中-自定义内容...</div>',
-            domNoData  : '<div class="dropload-noData">暂无数据-自定义内容</div>'
-        },
-        loadUpFn : function(me){
             // var analog={
           //       "lists":[
           //           {
