@@ -35,7 +35,29 @@ $(function(){
                 url: 'json/firstLoad.json',
                 dataType: 'json',
                 success: function(data){
-                  $('.content').dropload({
+                    // $('.con').remove();
+              var result='<div class="con">';
+              for(var i=0;i<data.lists.length;i++){
+                console.log(i);
+                result+='<div class="tb">'+
+                      '<span>'+i+'</span>'+
+                      '<span>'+data.lists[i].name+'</span>'+
+                      '<span>'+data.lists[i].num+'</span>'+
+                    '</div>'
+              }
+              result+='</div>';
+              console.log(result);
+              $('.table').html(result);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!');
+                    // 即使加载出错，也得重置
+                    console.log(xhr,type)
+                }
+            });
+    // ajaxx('firstLoad');
+    // dropload
+            $('.content').dropload({
         scrollArea : window,
         domUp : {
             domClass   : 'dropload-up',
@@ -164,31 +186,47 @@ $(function(){
                 }
             });
         },
-        threshold : 50
-    });
-                    // $('.con').remove();
-              var result='<div class="con">';
-              for(var i=0;i<data.lists.length;i++){
-                console.log(i);
-                result+='<div class="tb">'+
-                      '<span>'+i+'</span>'+
-                      '<span>'+data.lists[i].name+'</span>'+
-                      '<span>'+data.lists[i].num+'</span>'+
-                    '</div>'
-              }
-              result+='</div>';
-              console.log(result);
-              $('.table').html(result);
+        loadDownFn : function(me){
+            $.ajax({
+                type: 'GET',
+                url: 'json/more.json',
+                dataType: 'json',
+                success: function(data){
+                    var result = '';
+                    counter++;
+                    pageEnd = num * counter;
+                    pageStart = pageEnd - num;
+
+                    for(var i = pageStart; i < pageEnd; i++){
+                        result +=   '<a class="item opacity" href="'+data.lists[i].link+'">'
+                                        +'<img src="'+data.lists[i].pic+'" alt="">'
+                                        +'<h3>'+data.lists[i].title+'</h3>'
+                                        +'<span class="date">'+data.lists[i].date+'</span>'
+                                    +'</a>';
+                        if((i + 1) >= data.lists.length){
+                            // 锁定
+                            me.lock();
+                            // 无数据
+                            me.noData();
+                            break;
+                        }
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        $('.lists').append(result);
+                        // 每次数据加载完，必须重置
+                        me.resetload();
+                    },1000);
                 },
                 error: function(xhr, type){
                     alert('Ajax error!');
                     // 即使加载出错，也得重置
-                    console.log(xhr,type)
+                    me.resetload();
                 }
             });
-    // ajaxx('firstLoad');
-    // dropload
-            
+        },
+        threshold : 50
+    });
 
 });
 </script>
