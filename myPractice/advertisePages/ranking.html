@@ -161,7 +161,6 @@ $(function(){
                     $('.con').remove();
               var result='<div class="con">';
               for(var i=0;i<data.lists.length;i++){
-                console.log(i);
                 result+='<div class="tb">'+
                       '<span>'+i+'</span>'+
                       '<span>'+data.lists[i].name+'</span>'+
@@ -169,7 +168,6 @@ $(function(){
                     '</div>'
               }
               result+='</div>';
-              console.log(result);
               $('.table').html(result);
               me.resetload();
                         // 重置索引值，重新拼接more.json数据
@@ -195,7 +193,6 @@ $(function(){
                     // $('.con').remove();
               var result='<div class="con">';
               for(var i=0;i<data.lists.length;i++){
-                console.log(i);
                 result+='<div class="tb">'+
                       '<span>'+i+'</span>'+
                       '<span>'+data.lists[i].name+'</span>'+
@@ -203,9 +200,8 @@ $(function(){
                     '</div>'
               }
               result+='</div>';
-              console.log(result);
               $('.table').html(result);
-              me.lock('down');
+              console.log(me);
                 },
                 error: function(xhr, type){
                     alert('Ajax error!');
