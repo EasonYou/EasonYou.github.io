@@ -86,10 +86,13 @@ $(function() {
           var result = '<div class="con">';
           for (var i = 0; i < data.lists.length; i++) {
             result += '<div class="tb">' +
-              '<span>' + i + '</span>' +
-              '<span>' + data.lists[i].name + '</span>' +
-              '<span>' + data.lists[i].num + '</span>' +
-              '</div>'
+            '<span>' + i + '</span>' +
+            '<div>'+
+              '<img src="'+data.lists[i].src+'">'+
+              '<span>'+data.lists[i].name+'</span>'+
+            '</div>' +
+            '<span>' + data.lists[i].num + '</span>' +
+            '</div>'
           }
           result += '</div>';
           $('.table').html(result);
