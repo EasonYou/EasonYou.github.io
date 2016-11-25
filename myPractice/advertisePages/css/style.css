@@ -152,7 +152,16 @@ a{
 	color: #fff;
 	line-height: 3rem;
 }
-
+.tb div{
+	position: relative;
+}
+.tb div img{
+	position: absolute;
+	width: 2rem;
+	height: 2rem;
+	top: 0.5rem;
+	border-radius: 50%;
+}
 .close{
 	width: 2rem;
 	height: 2rem;

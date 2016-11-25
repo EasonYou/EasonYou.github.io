@@ -18,13 +18,14 @@
       <a>+</a>
     </div>
 	</div>
-	<div class="content">
+	<div class="content" style="height:100%;">
 		<div class="head">
 					<span>排名</span>
 					<span>用户</span>
 					<span>关联客户数</span>
 			</div>
 			<div class="table">
+     
 			</div>
 	</div>
 </body>
@@ -45,7 +46,10 @@ $(function() {
         console.log(i);
         result += '<div class="tb">' +
           '<span>' + i + '</span>' +
-          '<span>' + data.lists[i].name + '</span>' +
+          '<div>'+
+            '<img src="'+data.lists[i].src+'">'+
+            '<span>'+data.lists[i].name+'</span>'+
+          '<div>'
           '<span>' + data.lists[i].num + '</span>' +
           '</div>'
       }
