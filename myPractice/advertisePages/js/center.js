@@ -32,9 +32,10 @@
 	/** 是否有资格开启宝箱 **/
 
 	//模拟数据
-	var number = 199;
+	var number = 67;
 	//拥有资格，进入游戏页面
 	if (number >= 200) {
+		$('.ranknum').html('100%');
 		$('.game-img').attr('src', 'img/game.png')
 		$('.game-btn').on('touchend', function(e) {
 			window.location.href = 'game.html'
@@ -45,6 +46,7 @@
 	} //没有资格，弹窗
 	else {
 		$('.game-img').attr('src', 'img/game1.png')
+		$('.ranknum').html(parseInt(number/200*100)+'%');
 		$('.cpc').css('transform', 'translateX(' + (-100+parseInt(number/200*100)) + '%)');
 		$('.cpc').css('-webkit-transform', 'translateX(' + (-100+parseInt(number/200*100)) + '%)');
 		$('.game-btn').on('touchend', function(e) {

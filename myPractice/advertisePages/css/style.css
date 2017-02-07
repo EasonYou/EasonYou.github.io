@@ -37,6 +37,14 @@ a{
 	width: 100%;
 	margin-top: 1rem;
 }
+.centerRankDesc .ranknum{
+	color: yellow;
+	font-size: 1.5rem;
+	font-weight: bolder;
+	display: block;
+	width: 100%;
+	text-align: center;
+}
 .rankdesc{
 	display: inline-block;
 	width: 100%;
