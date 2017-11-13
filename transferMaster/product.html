@@ -1,30 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="./css/main.style.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="./js/jquery.hover3d.min.js"></script>
-    <title>Document</title>
-</head>
-<body id="product">
-    <header></header>
-    <div class="movie">
-        <div class="movie-card">
-            <div class="layer-1"></div>
-            <div class="layer-2"></div>
-            <div class="layer-3"></div>
-        </div>
-    </div>
-</body>
-<script>
-    $(".movie").hover3d({
-        selector: ".movie-card",
-        shine: true,
-        sensitivity: 400,
-        invert: true
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="./css/main.style.css" rel="stylesheet">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdn.bootcss.com/scrollify/1.0.17/jquery.scrollify.min.js"></script>
+  <script>
+    $(function() {
+      $.scrollify({
+        section : ".container",
+      });
     });
-</script>
+  </script>
+  <title>Docuent</title>
+</head>
+<body>
+  <header class="transparent light-color">
+		<ul class="clearfix">
+			<li><a href="#">其他</a></li>
+			<li><a class="product-btn-side" href="#">其他</a></li>
+			<li><a class="product-btn" href="#">产品</a></li>
+			<li><a class="product-btn-side"href="#">首页</a></li>
+		</ul>
+		<div class="product-list">
+			<div class="product-list-wapper">
+				<div class="product-list-item">
+					<a href="#">
+						<img src="./imgs/slogan-odin-black-r.8f61099fd493acc80ea9b76cc7507353.png" alt="">
+						<span class="product-name">锤子手机</span>
+					</a>
+				</div>
+				<div class="product-list-item">
+					<a href="#">
+						<img src="./imgs/slogan-odin-black-r.8f61099fd493acc80ea9b76cc7507353.png" alt="">
+						<span class="product-name">锤子手机</span>
+					</a>
+				</div>
+				<div class="product-list-item">
+					<a href="#">
+						<img src="./imgs/slogan-odin-black-r.8f61099fd493acc80ea9b76cc7507353.png" alt="">
+						<span class="product-name">锤子手机</span>
+					</a>
+				</div>
+				<div class="product-list-item">
+					<a href="#">
+						<img src="./imgs/slogan-odin-black-r.8f61099fd493acc80ea9b76cc7507353.png" alt="">
+						<span class="product-name">锤子手机</span>
+					</a>
+				</div>
+				<div class="product-list-item">
+					<a href="#">
+						<img src="./imgs/slogan-odin-black-r.8f61099fd493acc80ea9b76cc7507353.png" alt="">
+						<span class="product-name">锤子手机</span>
+					</a>
+				</div>
+				<div class="product-list-item">
+					<a href="#">
+						<img src="./imgs/slogan-odin-black-r.8f61099fd493acc80ea9b76cc7507353.png" alt="">
+						<span class="product-name">锤子手机</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</header>
+  <div class="scroll-bar">
+    <ul>
+      <li class="move-to">1</li>
+      <li class="move-to">2</li>
+      <li class="move-to">3</li>
+      <li class="move-to">4</li>
+    </ul>
+	</div>
+	<section class="container item-1" data-section-name="one">
+    <div class="desc-wapper active">
+      <div class="desc-text">
+        <h3>这是文案标题</h3>
+        <span>这是文案内容</span>
+			</div>
+			<div class="switch-4">
+				<span class="span-active">金色</span>
+				<span>银色</span>
+			</div>
+			<div class="img-wapper">
+				<div class="img">
+					<div class="gold4-img-1 active"></div>
+				</div>
+				<div class="img">
+					<div class="siliver4-img-1"></div>
+				</div>
+    </div>
+  </section>
+  <section class="container item-2" data-section-name="two">
+    <div class="desc-wapper">
+      <div class="desc-text">
+        <h3>这是文案标题</h3>
+        <span>这是文案内容</span>
+      </div>
+      <div class="phone-item"></div>
+    </div>
+  </section>
+  <section class="container item-3" data-section-name="three">
+    <div class="desc-wapper">
+      <div class="desc-text">
+        <h3>这是文案标题</h3>
+        <span>这是文案内容</span>
+      </div>
+      <div class="siliver-img-2"></div>
+    </div>
+  </section>
+  <section class="container item-4" data-section-name="four">
+    <div class="desc-wapper active">
+      <div class="desc-text">
+        <h3>这是文案标题</h3>
+        <span>这是文案内容</span>
+      </div>
+      <div class="keybord-img-1"></div>
+      <div class="mouse-img-1"></div>
+    </div>
+	</section>
+	<section class="container item-6" data-section-name="six">
+    <div class="desc-wapper">
+      <div class="desc-text">
+        <h3>这是文案标题</h3>
+        <span>这是文案内容</span>
+      </div>
+      <div class="keyboard-img-2"></div>
+    </div>
+  </section>
+  <section class="container item-5" data-section-name="five">
+    <div class="desc-wapper">
+      <div class="desc-text">
+        <h3>这是文案标题</h3>
+        <span>这是文案内容</span>
+      </div>
+      <div class="phone-item"></div>
+    </div>
+  </section>
+  <footer>
+		<div class="footer-container">
+			<ul>
+				<li>新手入门</li>
+				<li><a href="#">注册账户</a></li>
+				<li><a href="#">账号安全</a></li>
+				<li><a href="#">找回密码</a></li>
+				<li><a href="#">购物流程</a></li>
+			</ul>
+			<ul>
+				<li>订单服务</li>
+				<li><a href="#">在线支付</a></li>
+				<li><a href="#">退款说明</a></li>
+				<li><a href="#">取消订单</a></li>
+			</ul>
+			<ul>
+				<li>物流服务</li>
+				<li><a href="#">配送范围</a></li>
+				<li><a href="#">常见问题</a></li>
+			</ul>
+			<ul>
+				<li>售后服务</li>
+				<li><a href="#">服务政策</a></li>
+			</ul>
+			<ul>
+				<li>关于我们</li>
+				<li><a href="#">公司简介</a></li>
+				<li><a href="#">联系我们</a></li>
+				<li><a href="#">郑重声明</a></li>
+			</ul>
+			<ul>
+				<h3>400-186-8106</h3>
+				<span>027-65029083（硬件售后）</span>
+				<span>周一至周五 08:30 - 17:30</span>
+				<a href="#">在线服务</a>
+			</ul>
+		</div>
+		<div class="copyright">
+			<span>证监会投资咨询许可号：ZX0006</span>
+			<span>北京股商投资有限公司 广州新博庭网络信息科技股份有限公司 京IPC备13038920号-8</span>
+		</div>
+	</footer>
+</body>
+<script src="./js/main.js"></script>
 </html>
