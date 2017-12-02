@@ -17,24 +17,35 @@ if($.scrollify) {
         before:function(to) {
             if(to === 1) {
                 setTimeout(function() {
+                    setTimeout(function() {
+                        items.eq(to).find('.desc-text').addClass('active-text')
+                        items.eq(to).find('.icon-wapper').addClass('active-icon')
+                    }, 900)
                     items.eq(to).addClass('active')
                 }, 200)
                 return
             }
             setTimeout(function() {
+                setTimeout(function() {
+                    items.eq(to).find('.desc-text').addClass('active-text')
+                    setTimeout(function() {
+                        items.eq(to).find('.icon-wapper').addClass('active-icon')
+                    })
+                }, 700)
                 items.eq(to).addClass('active')
             }, 500)
             setTimeout(function() {
+                items.not(items.eq(to)).find('.icon-wapper').removeClass('active-icon')
+                items.not(items.eq(to)).find('.desc-text').removeClass('active-text')
                 items.not(items.eq(to)).removeClass('active')
             }, 400)
         },
         after:function(to) {
             if(to === 1) {
+                items.not(items.eq(to)).find('.icon-wapper').removeClass('active-icon')
+                items.not(items.eq(to)).find('.desc-text').removeClass('active-text')
                 items.not(items.eq(to)).removeClass('active')
             }
-            // setTimeout(function() {
-            //     $('.container .desc-wapper').eq(item).removeClass('active')
-            // }, 200)
         },
         afterResize:function(item) {
     
@@ -123,6 +134,52 @@ $('.item-1 .switch-4 span').each(function(item) {
             $('.siliver4-img-1').addClass('active')
             $('.gold4-img-1').removeClass('active')
             $('.item-1 .img-wapper').addClass('img-active')
+        }
+    })
+})
+$('.list-container .list-item .other-specic').click(function () {
+    $('.pop-container').css({display: 'block'})
+})
+$('.pop-container .list-item-header span').click(function () {
+    $('.pop-container').css({display: 'none'})
+})
+
+$(document).scroll(function() {
+    $('#product section').each(function(index, item) {
+        // console.log(item, index)
+        var flag = false
+        var rect = item.getBoundingClientRect()
+        var $item = $(item)
+        if (rect.y < rect.height/3*2 && rect.y > -rect.height/3*2) {
+            $item.find('.desc-wapper').addClass('active')
+            flag = true
+            setTimeout(function() {
+                if (flag) {
+                    var text = $item.find('.desc-text')
+                    if (!text.hasClass('active-text')) {
+                        text.addClass('active-text')
+                    }
+                }
+                setTimeout(function() {
+                if (flag) {
+                    var icon = $item.find('.icon-wapper')
+                    if (!icon.hasClass('active-icon')) {
+                        icon.addClass('active-icon')
+                    }
+                }
+                }, 300)
+            }, 700)
+        } else {
+            flag = false
+            var text = $item.find('.desc-text')
+            var icon = $item.find('.icon-wapper')
+            $item.find('.desc-wapper').removeClass('active')
+            if (text.hasClass('active-text')) {
+                text.removeClass('active-text')
+            }
+            if (icon.hasClass('active-icon')) {
+                icon.removeClass('active-icon')
+            }
         }
     })
 })
