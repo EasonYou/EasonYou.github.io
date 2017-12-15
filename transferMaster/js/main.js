@@ -65,15 +65,15 @@ $('.movie-togle li').each(function(item) {
     $(this).click(function() {
         $('.movie').removeClass('movie-active')
         $('.movie').eq(item).addClass('movie-active')
+        $('.movie-togle li').find('a').removeClass('active')
+        $(this).find('a').addClass('active')
     })
 })
 
 
 $('.product-btn').mouseenter(function(e) {
     console.log(e.target)
-    $('.product-list').css({
-        height: '200px'
-    })
+    $('.product-list').addClass('product-list-hover')
     $('.product-list-item').each(function(item) {
         var $this = $(this)
         setTimeout(function() {
@@ -84,21 +84,15 @@ $('.product-btn').mouseenter(function(e) {
 $('.product-btn').mouseleave(function(event) {
     console.log(event)
 
-    $('.product-list').css({
-        height: '0'
-    })
+    $('.product-list').removeClass('product-list-hover')
     
 })
 $('.product-list').mouseenter(function(e) {
-    $('.product-list').css({
-        height: '200px'
-    })
+    $('.product-list').addClass('product-list-hover')
     $('.product-list-item').addClass('active')
 })
 $('.product-list').mouseleave(function(e) {
-    $('.product-list').css({
-        height: '0'
-    })
+    $('.product-list').removeClass('product-list-hover')
     $('.product-list-item').each(function(item) {
         console.log(item)
         console.log(this)
@@ -144,13 +138,41 @@ $('.pop-container .list-item-header span').click(function () {
     $('.pop-container').css({display: 'none'})
 })
 
-$(document).scroll(function() {
+$(document).scroll(function(e) {
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
+    if (scrollTop >= 400) {
+        if ($('.scroll-top').hasClass('hidden-scroll')) {
+            $('.scroll-top').removeClass('hidden-scroll')
+        }
+        if (!$('header').hasClass('hidden')) {
+            $('header').addClass('hidden')
+        }
+        if (!$('.fixtop').hasClass('hidden')) {
+            $('.fixtop').addClass('hidden')
+        }
+        if (!$('.product-list').hasClass('product-list-scroll')) {
+            $('.product-list').addClass('product-list-scroll')
+        }
+    } else {
+        if (!$('.scroll-top').hasClass('hidden-scroll')) {
+            $('.scroll-top').addClass('hidden-scroll')
+        }
+        if ($('.fixtop').hasClass('hidden')) {
+            $('header').removeClass('hidden')
+        }
+        if ($('.fixtop').hasClass('hidden')) {
+            $('.fixtop').removeClass('hidden')
+        }
+        if ($('.product-list').hasClass('product-list-scroll')) {
+            $('.product-list').removeClass('product-list-scroll')
+        }
+    }
     $('#product section').each(function(index, item) {
         // console.log(item, index)
         var flag = false
         var rect = item.getBoundingClientRect()
         var $item = $(item)
-        if (rect.y < rect.height/3*2 && rect.y > -rect.height/3*2) {
+        if (rect.top < rect.height/3*2 && rect.top > -rect.height/3*2) {
             $item.find('.desc-wapper').addClass('active')
             flag = true
             setTimeout(function() {
@@ -182,4 +204,20 @@ $(document).scroll(function() {
             }
         }
     })
+})
+$('.item-test3 .icon-wapper span').each(function (item) {
+    $(this).click(function() {
+        $('.item-test3 .icon-wapper span').removeClass('span-active')
+        $(this).addClass('span-active')
+        if (item === 0) {
+            $('.item-test3 .img-wapper').removeClass('siliver')
+        }
+        if (item === 1) {
+            $('.item-test3 .img-wapper').addClass('siliver')
+        }
+    })
+})
+
+$('.scroll-top').click(function() {
+    document.documentElement.scrollTo(0, 0)
 })
