@@ -219,5 +219,28 @@ $('.item-test3 .icon-wapper span').each(function (item) {
 })
 
 $('.scroll-top').click(function() {
-    document.documentElement.scrollTo(0, 0)
+    $("html,body").animate({scrollTop:0}, 500);
 })
+
+
+$('.product-item-img').each(function() {
+    var wapper = $(this)
+    $(this).find('.cotrol-wapper').each(function (item) {
+        console.log(this)
+        $(this).find('span').each(function(index) {
+            $(this).click(function() {
+                if (index === 0) {
+                    wapper.find('img').eq(0).removeClass('left')
+                    wapper.find('img').eq(1).addClass('right')
+                }
+                if (index === 1) {
+                    wapper.find('img').eq(0).addClass('left')
+                    wapper.find('img').eq(1).removeClass('right')
+                }
+            })
+        })
+    })
+})
+
+
+
