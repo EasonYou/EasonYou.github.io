@@ -1,3 +1,8 @@
+
+$('img').lazyload({
+    effect : "fadeIn",
+    threshold : 1000
+})
 var from = 0,
     items = $('.container .desc-wapper')
 if($.scrollify) {
@@ -56,6 +61,13 @@ if($.scrollify) {
     });
 }
 var toArr = ['one', 'two', 'three', 'four']
+$('.product-header').each(function() {
+    $(this).find('a').each(function(index) {
+        $(this).click(function() {
+            $.scrollify.move("#" + toArr[index]);
+        })
+    })
+})
 $('.move-to').each(function(item) {
     $(this).click(function() {
         $.scrollify.move("#" + toArr[item]);
@@ -82,18 +94,14 @@ $('.product-btn').mouseenter(function(e) {
     })
 })
 $('.product-btn').mouseleave(function(event) {
-    console.log(event)
-
     $('.product-list').removeClass('product-list-hover')
     
 })
 $('.product-list').mouseenter(function(e) {
-    $('.product-list').addClass('product-list-hover')
-    $('.product-list-item').addClass('active')
+    $(this).addClass('product-list-hover').find('.product-list-item').addClass('active')
 })
 $('.product-list').mouseleave(function(e) {
-    $('.product-list').removeClass('product-list-hover')
-    $('.product-list-item').each(function(item) {
+    $(this).removeClass('product-list-hover').find('.product-list-item').each(function(item) {
         console.log(item)
         console.log(this)
         var $this = $(this)
@@ -102,33 +110,64 @@ $('.product-list').mouseleave(function(e) {
         }, 50 * (item+1))
     })
 })
-$('.product-btn-side').mouseenter(function() {
-    $('.product-list-item').each(function(item) {
+$('.product-btn-1').mouseenter(function(e) {
+    $('.product-list-1').addClass('product-list-hover').find('.product-list-item').each(function(item) {
+        var $this = $(this)
+        setTimeout(function() {
+            $this.addClass('active')
+        }, 50 * (item+1))
+    })
+})
+$('.product-btn-1').mouseleave(function(event) {
+    $('.product-list-1').removeClass('product-list-hover')
+})
+$('.product-list-1').mouseenter(function(e) {
+    $(this).addClass('product-list-hover').find('.product-list-item').addClass('active')
+})
+$('.product-list-1').mouseleave(function(e) {
+    $(this).removeClass('product-list-hover').find('.product-list-item').each(function(item) {
+        console.log(item)
+        console.log(this)
         var $this = $(this)
         setTimeout(function() {
             $this.removeClass('active')
         }, 50 * (item+1))
     })
 })
+$('.product-btn-side').each(function(index) {
+    $(this).mouseenter(function() {
+        console.log(index)
+        var i = index === 0 ? '' : '-1'
+        $('.product-list' + i).find('.product-list-item').each(function(item) {
+            var $this = $(this)
+            setTimeout(function() {
+                $this.removeClass('active')
+            }, 50 * (item+1))
+        })
+    })
+})
 
-$('.item-1 .switch-4 span').each(function(item) {
-    console.log(item,$(this))
-    $(this).click(function() {
-        console.log('hehe')
-        if(item === 0) {
-            $(this).addClass('span-active')
-            $('.item-1 .switch-4 span').eq(1).removeClass('span-active')
-            $('.gold4-img-1').addClass('active')
-            $('.siliver4-img-1').removeClass('active')
-            $('.item-1 .img-wapper').removeClass('img-active')
-        }
-        if(item === 1) {
-            $(this).addClass('span-active')
-            $('.item-1 .switch-4 span').eq(0).removeClass('span-active')
-            $('.siliver4-img-1').addClass('active')
-            $('.gold4-img-1').removeClass('active')
-            $('.item-1 .img-wapper').addClass('img-active')
-        }
+$('.item-1').each(function() {
+    var item1 = $(this)
+    item1.find('.switch-4 span').each(function(item) {
+        console.log(item,$(this))
+        var click = $(this)
+        click.click(function() {
+            if(item === 0) {
+                click.addClass('span-active')
+                item1.find('.switch-4 span').eq(1).removeClass('span-active')
+                item1.find('.gold4-img-1').addClass('active')
+                item1.find('.siliver4-img-1').removeClass('active')
+                item1.find('.img-wapper').removeClass('img-active')
+            }
+            if(item === 1) {
+                click.addClass('span-active')
+                item1.find('.switch-4 span').eq(0).removeClass('span-active')
+                item1.find('.siliver4-img-1').addClass('active')
+                item1.find('.gold4-img-1').removeClass('active')
+                item1.find('.img-wapper').addClass('img-active')
+            }
+        })
     })
 })
 $('.list-container .list-item .other-specic').click(function () {
@@ -140,7 +179,7 @@ $('.pop-container .list-item-header span').click(function () {
 
 $(document).scroll(function(e) {
     var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop
-    if (scrollTop >= 400) {
+    if (scrollTop >= 20) {
         if ($('.scroll-top').hasClass('hidden-scroll')) {
             $('.scroll-top').removeClass('hidden-scroll')
         }
@@ -152,6 +191,9 @@ $(document).scroll(function(e) {
         }
         if (!$('.product-list').hasClass('product-list-scroll')) {
             $('.product-list').addClass('product-list-scroll')
+        }
+        if (!$('.product-list-1').hasClass('product-list-scroll')) {
+            $('.product-list-1').addClass('product-list-scroll')
         }
     } else {
         if (!$('.scroll-top').hasClass('hidden-scroll')) {
@@ -165,6 +207,9 @@ $(document).scroll(function(e) {
         }
         if ($('.product-list').hasClass('product-list-scroll')) {
             $('.product-list').removeClass('product-list-scroll')
+        }
+        if ($('.product-list-1').hasClass('product-list-scroll')) {
+            $('.product-list-1').removeClass('product-list-scroll')
         }
     }
     $('#product section').each(function(index, item) {
@@ -240,6 +285,23 @@ $('.product-item-img').each(function() {
             })
         })
     })
+})
+
+$(document).ready(function() {
+    var hash = window.location.hash
+    if (!hash || hash === '#one') {
+        console.log(hash)
+        setTimeout(function() {
+            setTimeout(function() {
+                items.eq(0).find('.desc-text').addClass('active-text')
+                items.eq(0).find('.icon-wapper').addClass('active-icon')
+            }, 900)
+            items.eq(0).addClass('active')
+        }, 200)
+    } else {
+        console.log(hash)
+        $.scrollify.move(hash);
+    }
 })
 
 
