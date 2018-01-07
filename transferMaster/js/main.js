@@ -60,14 +60,14 @@ if($.scrollify) {
         }
     });
 }
-var toArr = ['one', 'two', 'three', 'four']
-$('.product-header').each(function() {
-    $(this).find('a').each(function(index) {
-        $(this).click(function() {
-            $.scrollify.move("#" + toArr[index]);
-        })
-    })
-})
+// var toArr = ['one', 'two', 'three', 'four']
+// $('.product-header').each(function() {
+//     $(this).find('a').each(function(index) {
+//         $(this).click(function() {
+//             $.scrollify.move("#" + toArr[index]);
+//         })
+//     })
+// })
 $('.move-to').each(function(item) {
     $(this).click(function() {
         $.scrollify.move("#" + toArr[item]);
@@ -264,6 +264,10 @@ $('.item-test3 .icon-wapper span').each(function (item) {
 })
 
 $('.scroll-top').click(function() {
+    if ($.scrollify) {
+        $.scrollify.move("#one")
+        return
+    }
     $("html,body").animate({scrollTop:0}, 500);
 })
 
@@ -287,7 +291,23 @@ $('.product-item-img').each(function() {
     })
 })
 
+$(window).on('load', function () {
+    resize()
+})
 $(document).ready(function() {
+    console.log($().owlCarousel)
+    if ($().owlCarousel) {
+        console.log('ready')
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            margin:50,
+            // nav:true,
+            items: 1,
+            autoplay: true,
+            autoplayTimeout:5000,
+            autoplayHoverPause:true
+        });
+    }
     var hash = window.location.hash
     if (!hash || hash === '#one') {
         console.log(hash)
@@ -304,5 +324,43 @@ $(document).ready(function() {
     }
 })
 
-
-
+$(window).resize(function() {
+    resize()
+});
+$('.pop-confirm').click(function(e) {
+    if (e.target === $(this)[0]) {
+        $(this).css({display: 'none'})
+        $('.is-check')[0].checked = false
+    }
+})
+var flag = 0
+$('.buy-btn').each(function(index) {
+    $(this).click(function() {
+        flag = index
+        $('.pop-confirm').css({display: 'block'})
+    })
+})
+$('.buy-confirm').click(function() {
+    console.log($('.is-check')[0].checked)
+    if (($('.is-check')[0].checked)) {
+        if (flag === 0) {
+            location.href = 'http://www.ktkt.com/buy/kingtrader-single-quarter'
+        }
+        if (flag === 1) {
+            location.href = 'http://www.ktkt.com/buy/kingtrader-single'
+        }
+    } else {
+        alert('请确认已阅读!')
+    }
+})
+function resize () {
+    var windowScale = $(window).width() / $(window).height()
+    $('.bg-img').each(function(img) {
+        var scale = $(this).width() / $(this).height()
+        if (windowScale >= scale) {
+            $(this).addClass('fill-width')
+        } else {
+            $(this).removeClass('fill-width')
+        }
+    })
+}
